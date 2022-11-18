@@ -1,0 +1,34 @@
+{
+  "name": "freak-cloud-contracts",
+  "version": "0.1.0",
+  "description": "Smart contracts powering Freak Cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freak-cloud/freak-cloud.git"
+  },
+  "keywords": [
+    "cloud",
+    "data-storage",
+    "blockchain",
+    "solidity",
+    "smart-contracts"
+  ],
+  "author": "Freak Cloud Team",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/freak-cloud/freak-cloud/issues"
+  },
+  "homepage": "https://github.com/freak-cloud/freak-cloud#readme",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.1"
+  }
+}

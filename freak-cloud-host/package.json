@@ -1,0 +1,18 @@
+{
+  "name": "freak-cloud-host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "fastify": "^4.9.2",
+    "ipfs-core": "^0.17.0",
+    "level": "^8.0.0"
+  },
+  "type": "module"
+}
