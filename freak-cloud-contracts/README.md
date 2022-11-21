@@ -33,3 +33,7 @@ npx hardhat run --network localhost scripts/deploy.js
 ```
 npx hardhat test
 ```
+
+## Contract info
+
+Our contract was deployed on the Aurora Testnet, with the address of `0x1A3e7926d3AA127fD58751305426337709Ddc6F0`.
