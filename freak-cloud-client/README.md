@@ -34,4 +34,4 @@ The `RPC_PORT` is set to `2907` by default, and `PRIVATE_KEY` is `0xac0974bec39a
 
 ## The API spec
 
-Check out `APIs.md` for a specification on how to use the client's apis.
+Check out [`APIs.md`](./APIs.md) for a specification on how to use the client's apis.
