@@ -4,6 +4,7 @@
 
 import Fastify from "fastify";
 import * as IPFS from "ipfs-core";
+import * as all from "it-all";
 import { readFileSync, writeFileSync } from "node:fs";
 import { getDepth, getMerklePath, buildMerkleTree } from "../utils/merkle.js";
 import { fcContract } from "../contract/instances.js";
