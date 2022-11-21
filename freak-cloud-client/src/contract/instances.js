@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { config } from "../../config.js";
 import * as contractConfig from "./config.js";
 
-const jsonRPCProvider = ethers.getDefaultProvider();
+const jsonRPCProvider = new ethers.providers.JsonRpcProvider(config.JSON_RPC);
 
 const signer = new ethers.Wallet(config.PRIVATE_KEY, jsonRPCProvider);
 

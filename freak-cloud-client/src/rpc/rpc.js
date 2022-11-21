@@ -15,7 +15,7 @@ export async function rpc(PORT) {
 
     process.on("uncaughtException", err => console.log("LOG ::", err));
 
-    fastify.get("/:option", async (req, reply) => {
+    fastify.post("/", async (req, reply) => {
 
         function throwError(message, status, payload = null) {
             reply.status(status);
@@ -71,13 +71,15 @@ export async function rpc(PORT) {
                         treeDepth, 
                         ipfsHash, 
                         timeout,
-                        { value: storageFee }
+                        { value: BigInt(storageFee) }
                     );
 
                     const rc = await tx.wait(); 
                     const event = rc.events.find(event => event.event === 'ContractCreated');
+
+                    console.log(event.args[0]);
                     
-                    id = event[0];
+                    id = event.args[0];
                 } catch (e) {
                     throwError("An error occured while creating contract.", 400);
                     
@@ -89,11 +91,15 @@ export async function rpc(PORT) {
                 break;
 
             case "download":
-                const { contractID, _ipfsHash, dir, fee } = req.body.params;
+                const { contractID, dir, fee } = req.body.params;
+
+                const _ipfsHash = req.body.params.ipfsHash;
 
                 try {
-                    await fcContract.initDownloadFee(contractID, { value: fee });
+                    await fcContract.initDownloadFee(contractID, { value: BigInt(fee) });
                 } catch (e) {
+                    console.log(e);
+
                     throwError("An error occured while setting download fee.", 400);
                     
                     return;
@@ -124,10 +130,8 @@ export async function rpc(PORT) {
                 break;
 
             case "challenge":
-                const { _contractID, leaves } = req.body.params;
-
                 try {
-                    await fcContract.challenge(_contractID, leaves);
+                    await fcContract.challenge(req.body.params.contractID, req.body.params.leaves);
                 } catch (e) {
                     throwError("An error occured while making a challenge.", 400);
                     
