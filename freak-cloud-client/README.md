@@ -34,7 +34,7 @@ The `RPC_PORT` is set to `2907` by default, and `PRIVATE_KEY` is `0xac0974bec39a
 
 ## Configure the contract endpoint
 
-Currently, Freak Cloud's contract address is set to `0x5FbDB2315678afecb367f032d93F642f64180aa3`, which is ab address in our testing process. If you are re-deploying a contract on localhost, change the address in `./src/contract/config.js`.
+Currently, Freak Cloud's contract address is set to `0x5FbDB2315678afecb367f032d93F642f64180aa3`, which is an address in our testing process. If you are re-deploying a contract on localhost, change the address in `./src/contract/config.js`.
 
 You can also use a version deployed on Aurora with the address `0x1A3e7926d3AA127fD58751305426337709Ddc6F0`.
 
