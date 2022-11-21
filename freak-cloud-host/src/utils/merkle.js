@@ -10,7 +10,7 @@ export function getDepth(node, depth = 1) {
         return depth;
     }
 
-    return getDepth(node, depth + 1);
+    return getDepth(node.left, depth + 1);
 }
 
 export function getMerklePath(node, target, path = []) {
