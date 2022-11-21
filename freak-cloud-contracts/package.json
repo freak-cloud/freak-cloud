@@ -18,7 +18,7 @@
     "smart-contracts"
   ],
   "author": "Freak Cloud Team",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/freak-cloud/freak-cloud/issues"
   },

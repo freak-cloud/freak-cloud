@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 import "./interfaces/ISettlement.sol";
@@ -88,8 +88,13 @@ contract Settlement is ISettlement {
         bytes32 genHash2 = leaves[0];
         
         for (uint i = 1; i < leaves.length;) {
-            genHash1 = keccak256(abi.encode(genHash1, leaves[i]));
-            genHash2 = keccak256(abi.encode(genHash2, leaves[i]));
+            if (i % 2 == 0) {
+                genHash1 = keccak256(abi.encode(genHash1, leaves[i]));
+                genHash2 = keccak256(abi.encode(leaves[i], genHash2));
+            } else {
+                genHash2 = keccak256(abi.encode(genHash2, leaves[i]));
+                genHash1 = keccak256(abi.encode(leaves[i], genHash1));
+            }
 
             unchecked {
                 i++;

@@ -1,13 +1,35 @@
-# Sample Hardhat Project
+## Getting started
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+### Dependencies
 
-Try running some of the following tasks:
+* npm
+* node.js
 
-```shell
-npx hardhat help
+### Setup
+
+1. Clone this repository.
+
+2. Install the required packages:
+```
+npm install
+```
+
+3. Edit your private key and make necessary setup in `hardhat.config.js`.
+
+### Compile
+
+```
+npx hardhat compile
+```
+
+### Deploy
+
+```
+npx hardhat run --network localhost scripts/deploy.js
+```
+
+### Test
+
+```
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
 ```
